@@ -24,4 +24,11 @@ export const ROUTES = {
 
   // Home route
   HOME: '/',
+
+  // Fertility routes
+  FERTILITY: '/fertility',
+  FERTILITY_TRACKING: '/fertility/tracking',
+  FERTILITY_CALENDAR: '/fertility/calendar',
+  FERTILITY_EDUCATION: '/fertility/education',
+  FERTILITY_CONSULTATION: '/fertility/consultation',
 } as const
