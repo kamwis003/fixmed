@@ -16,56 +16,81 @@ import { PaymentSuccessPage } from "@/pages/payment-success-page";
 import { PaymentCancelledPage } from "@/pages/payment-cancelled-page";
 import { AccountPage } from "@/pages/account/account-page";
 import { BillingPage } from "@/pages/billing/billing-page";
+import { FertilityDashboard } from "@/pages/fertility/fertility-dashboard";
+import { CycleTracking } from "@/pages/fertility/cycle-tracking";
+import { CycleCalendar } from "@/pages/fertility/cycle-calendar";
+import { FertilityEducation } from "@/pages/fertility/education";
+import { ConsultationRequest } from "@/pages/fertility/consultation-request";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayout />,
-    errorElement: <NotFound />,
+    element: <AppLayout />, 
+    errorElement: <NotFound />, 
     children: [
       {
-        element: <GuestRoute />,
+        element: <GuestRoute />, 
         children: [
           {
             path: ROUTES.LOGIN,
-            element: <LoginPage />,
+            element: <LoginPage />, 
           },
           {
             path: ROUTES.REGISTER,
-            element: <RegisterPage />,
+            element: <RegisterPage />, 
           },
           {
             path: ROUTES.FORGOT_PASSWORD,
-            element: <ForgotPasswordPage />,
+            element: <ForgotPasswordPage />, 
           },
           {
             path: ROUTES.UPDATE_PASSWORD,
-            element: <UpdatePasswordPage />,
+            element: <UpdatePasswordPage />, 
           },
         ],
       },
       {
-        element: <ProtectedRoute />,
+        element: <ProtectedRoute />, 
         children: [
           {
-            element: <DashboardLayout />,
+            element: <DashboardLayout />, 
             children: [
               { index: true, element: <DashboardPage /> },
               {
                 path: 'account',
-                element: <AccountPage />,
+                element: <AccountPage />, 
               },
               {
                 path: 'billing',
-                element: <BillingPage />,
+                element: <BillingPage />, 
               },
               {
                 path: 'payment-success',
-                element: <PaymentSuccessPage />,
+                element: <PaymentSuccessPage />, 
               },
               {
                 path: 'payment-cancelled',
-                element: <PaymentCancelledPage />,
+                element: <PaymentCancelledPage />, 
+              },
+              {
+                path: 'fertility',
+                element: <FertilityDashboard />, 
+              },
+              {
+                path: 'fertility/tracking',
+                element: <CycleTracking />, 
+              },
+              {
+                path: 'fertility/calendar',
+                element: <CycleCalendar />, 
+              },
+              {
+                path: 'fertility/education',
+                element: <FertilityEducation />, 
+              },
+              {
+                path: 'fertility/consultation',
+                element: <ConsultationRequest />, 
               },
             ]
           },
@@ -73,11 +98,11 @@ export const router = createBrowserRouter([
       },
       {
         path: ROUTES.TERMS_OF_SERVICE,
-        element: <TermsOfServicePage />,
+        element: <TermsOfServicePage />, 
       },
       {
         path: ROUTES.PRIVACY_POLICY,
-        element: <PrivacyPolicyPage />,
+        element: <PrivacyPolicyPage />, 
       },
     ],
   },
